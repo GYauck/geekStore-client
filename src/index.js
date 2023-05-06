@@ -3,17 +3,19 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
-import { AuthProvider } from "./context/AuthProvider";
 import { ProductsProvider } from "./context/ProductsProvider";
+//redux
+import { Provider } from "react-redux";
+import store from "./state/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
       <ProductsProvider>
-        <AuthProvider>
+        <Provider store={store}>
           <App />
-        </AuthProvider>
+        </Provider>
       </ProductsProvider>
     </Router>
   </React.StrictMode>

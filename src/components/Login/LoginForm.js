@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import AuthContext from "../../context/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { useInput } from "../../hooks/useInput";
 import Cookies from "js-cookie";
@@ -11,7 +9,6 @@ import { faLock } from "@fortawesome/free-solid-svg-icons";
 import { fetchApi } from "../../config/axiosInstance";
 
 const LoginForm = () => {
-  const { setUser } = useContext(AuthContext);
 
   const email = useInput("email");
   const password = useInput("password");
@@ -20,7 +17,7 @@ const LoginForm = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    await fetchApi({
+    const res = await fetchApi({
       method: "post",
       url: "/api/users/login",
       body: {
@@ -28,15 +25,16 @@ const LoginForm = () => {
         password: password.value,
       },
     });
+    Cookies.set("token", res.data.user.token)
     const user = await fetchApi({
       method: "get",
       url: "/api/users/me",
       headers: { Authorization: `Bearer ${token}` },
     });
-    setUser(user.data);
     navigate("/");
     return user.data;
-  };
+  }
+
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">

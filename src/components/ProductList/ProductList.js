@@ -26,13 +26,6 @@ const ProductList = () => {
     fetchData();
   }, []);
 
-  /*   useEffect(() => {
-    axios
-      .get("/api/products/getAllProducts")
-      .then((res) => res.data)
-      .then((products) => setProducts(products));
-  }, []); */
-
   return (
     <>
       <div className="bg-white">

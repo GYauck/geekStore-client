@@ -1,7 +1,6 @@
-import { Fragment, useContext } from "react";
+import { Fragment, useContext, useEffect } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { NavLink, useLocation, useParams } from "react-router-dom";
-import AuthContext from "../../context/AuthProvider";
 
 import logo from "../../assets/GeekStore-Tech.png";
 
@@ -11,9 +10,10 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { fetchApi } from "../../config/axiosInstance";
+import { checkLogin } from "../../state/user";
+import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
   const location = useLocation();
   const pathLocation = location.pathname.split("/")[1];
 
@@ -29,6 +29,12 @@ const Navbar = () => {
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
   }
+  const user = useSelector(state=>state.users)
+  const dispatch = useDispatch()
+  
+  useEffect(() => {
+    dispatch(checkLogin())
+  },[])
 
   const handleLogout = async (e) => {
     e.preventDefault();
