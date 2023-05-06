@@ -7,7 +7,7 @@ export const checkLogin = createAsyncThunk("check", async () => {
     const res = await fetchApi({
       method: "get",
       url: "/api/users/me",
-      headers: { Authorization: `Bearer ${Cookies.get("token")}` },
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
     console.log(res)
     return res.data;

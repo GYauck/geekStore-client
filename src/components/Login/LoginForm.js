@@ -26,6 +26,7 @@ const LoginForm = () => {
       },
     });
     Cookies.set("token", res.data.user.token)
+    localStorage.setItem("token",res.data.user.token)
     const user = await fetchApi({
       method: "get",
       url: "/api/users/me",
