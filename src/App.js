@@ -3,15 +3,15 @@ import Navbar from "./components/Navbar/Navbar";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import { useContext, useEffect } from "react";
-import AuthContext from "../../client/src/context/AuthProvider";
+import { useContext, useEffect, useState } from "react";
+/* import AuthContext from "../../client/src/context/AuthProvider"; */
 import AdminPanel from "./pages/AdminPanel";
 import { fetchApi } from "./config/axiosInstance";
 import Cookies from "js-cookie";
 
 
 function App() {
-  const { user, setUser } = useContext(AuthContext);
+  const [user, setUser] = useState({});
   const token = Cookies.get("token");
 
   const fetchData = async()=> {
