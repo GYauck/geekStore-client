@@ -9,6 +9,7 @@ export const checkLogin = createAsyncThunk("check", async () => {
       url: "/api/users/me",
       headers: { Authorization: `Bearer ${Cookies.get("token")}` },
     });
+    console.log(res)
     return res.data;
   } catch (error) {
     console.log(error);
