@@ -2,7 +2,6 @@ import { useContext } from "react";
 import AuthContext from "../../context/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { useInput } from "../../hooks/useInput";
-import axios from "axios";
 import Cookies from "js-cookie";
 
 //FontAwsome

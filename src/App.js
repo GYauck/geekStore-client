@@ -4,7 +4,6 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import { useContext, useEffect } from "react";
-import axios from "axios";
 import AuthContext from "../../client/src/context/AuthProvider";
 import AdminPanel from "./pages/AdminPanel";
 import { fetchApi } from "./config/axiosInstance";
