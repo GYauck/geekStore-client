@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+Este proyecto consta de frontend y backend por separado. Para probarlo en forma local, bajar tanto este repositorio, como la parte backend que esta en mis repositorios (geekStore-server)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Una vez descargado y echo los pasos de la parte del backend.
 
-## Available Scripts
+Ir a la consola, posicionarse en el /client del proyecto y correr npm install para installar las dependencias.
 
-In the project directory, you can run:
+Despues correr npm start para levar el front en el navegador.
 
-### `npm start`
+La pagina cuenta con un usuario Administrador que se crea al seedear el backend.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Las credenciales son:
+email: admin@gmail.com
+password: admin
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Con el usuario Admin se puede ingresar para ver el panel de administrador y realizar el CRUD de los productos, como tambien eliminar usuarios registrados o darles rol de administrador.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Librerias utilizadas:
+-tailwindcss: Framework de css
+-headlessui: Componentes realizados para tailwind para darles estilos.
+-axios: Libreria basada en HTTP, que maneja promesas para el node.js y el navegador.
+-react-router-dom: Es una biblioteca que proporciona enrutamiento (routing) declarativo para aplicaciones de React. 
+-fortawesome: Es una biblioteca de iconos
 
-### `npm run build`
+Dentro de la aplicacion, en el home, vamos a poder ver un listado de todo los productos disponibles. Se muestran hasta 8 productos por pagina. Los mismos tienen una marca y logo(por medio de una asociacion de tablas).
+ Podemos clickear a cada producto, para tener una vista mas detallada del mismo.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Nos vamos a poder loguear directamente como administrador con las credenciales mencionadas arriba, o nos podemos crear un usuario nuevo si vamos al "login" de la Navbar, y en el formulario de Login hacemos click en Register.
+ Una vez logueados, si lo hacemos con el usuario Administrador, vamos a poder ver un "Admin Panel" en la Navbar. Si nos dirigimos al panel de administrador, dentro del mismo vamos a poder cargar, editar y borrar productos. Y tambien podemos ver y controlar los usuario registrados.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
