@@ -42,6 +42,7 @@ const Navbar = () => {
       method: "post",
       url: "/api/users/logout",
     });
+    localStorage.clear()
     window.location.reload();
   };
 
