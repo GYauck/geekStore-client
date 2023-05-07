@@ -7,12 +7,15 @@ Ir a la consola, posicionarse en el /client del proyecto y correr:
  npm install para installar las dependencias.
  npm start para levar el front en el navegador.
 <br/>
+<br/>
 Otra punto importante para correrlo localmente,es modificar un archivo en la carpeta src/config/axiosinstance.js
 <br/>
 Descomentar la linea con el localhost, y comentar la linea con el geekstore-server.
 <br/>
 /* const baseURL = 'http://localhost:8080'; */
+<br/>
 const baseURL = 'https://geekstore-server.onrender.com';
+<br/>
 <br/>
 La pagina cuenta con un usuario Administrador que se crea al seedear el backend.
 <br/>
