@@ -16,6 +16,9 @@ Descomentar la linea con el localhost, y comentar la linea con el geekstore-serv
 <br/>
 const baseURL = 'https://geekstore-server.onrender.com';
 <br/>
+Y tambien en el archivo package.json, agregar el siguiente proxy:
+"proxy": "http://localhost:8080"
+<br/>
 <br/>
 La pagina cuenta con un usuario Administrador que se crea al seedear el backend.
 <br/>
